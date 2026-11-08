@@ -1,0 +1,1 @@
+var e=`/ems-operations/assets/noto-sans-cyrillic-700-normal-D8UNalU-.woff`;export{e as default};

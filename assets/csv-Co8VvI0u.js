@@ -1,0 +1,4 @@
+var e=/^[=+\-@\t\r]/,t=t=>e.test(t)&&!/^-?\d+([.,]\d+)?$/.test(t);function n(e){if(e==null)return``;let n=typeof e==`object`?JSON.stringify(e):String(e);return t(n)?`'${n}`:n}function r(e,t){let r=e=>{let t=n(e);return/[",;\n\r]/.test(t)?`"${t.replace(/"/g,`""`)}"`:t};return`﻿${[e.map(r).join(`,`),...t.map(e=>e.map(r).join(`,`))].join(`\r
+`)}\r\n`}function i(e){let t=e.replace(/^﻿/,``),n=t.split(/\r?\n/,1)[0]??``,r=[`,`,`;`,`	`].map(e=>[e,n.split(e).length]).sort((e,t)=>t[1]-e[1]),i=r[0][1]>1?r[0][0]:`,`,a=[],o=[],s=``,c=!1;for(let e=0;e<t.length;e++){let n=t[e];c?n===`"`?t[e+1]===`"`?(s+=`"`,e++):c=!1:s+=n:n===`"`&&s===``?c=!0:n===i?(o.push(s),s=``):n===`
+`||n===`\r`?(n===`\r`&&t[e+1]===`
+`&&e++,o.push(s),s=``,o.some(e=>e.trim()!==``)&&a.push(o),o=[]):s+=n}return o.push(s),o.some(e=>e.trim()!==``)&&a.push(o),a}export{i as n,r,t};

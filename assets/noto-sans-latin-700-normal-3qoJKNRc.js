@@ -1,0 +1,1 @@
+var e=`/ems-operations/assets/noto-sans-latin-700-normal-ZyrKABVF.woff`;export{e as default};
